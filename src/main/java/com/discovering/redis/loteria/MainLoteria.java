@@ -1,5 +1,6 @@
 package com.discovering.redis.loteria;
 
+import java.util.List;
 import java.util.Set;
 
 import redis.clients.jedis.Jedis;
@@ -14,8 +15,16 @@ public class MainLoteria {
 		int ano = 2013;
 		
 		Set<String> chavesResult = FiltrarHistoricoDaMegaSena.filtrarResultados(mes, ano);
+		System.out.println("Filtro por ano/mês - " + chavesResult);
 		
-		System.out.println(chavesResult);
+		List<String> todasChaves = FiltrarHistoricoDaMegaSena.exercicio1mget();
+		System.out.println("ex1 - " + todasChaves);
+		
+		Long tamanhoChave = FiltrarHistoricoDaMegaSena.exercicio2Strlen();
+		System.out.println("ex2 - " + tamanhoChave);
+		
+		String range = FiltrarHistoricoDaMegaSena.exercicio3GetRange();
+		System.out.println("ex3 - " + range);
 	}
 	
 	private static void criarResultados() {
