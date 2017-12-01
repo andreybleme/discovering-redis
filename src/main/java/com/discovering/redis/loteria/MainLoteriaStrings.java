@@ -5,7 +5,7 @@ import java.util.Set;
 
 import redis.clients.jedis.Jedis;
 
-public class MainLoteria {
+public class MainLoteriaStrings {
 
 	private static Jedis jedis;
 
